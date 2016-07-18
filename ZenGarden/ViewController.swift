@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         setImageHeightWidth(rock)
         setImageHeightWidth(shrub)
         setImageHeightWidth(sword)
-        setImageXYConstraints()
+        setInitialImageXYConstraints()
         
         setCornerViewHeightWidth(topLeftCorner)
         setCornerViewHeightWidth(topRightCorner)
@@ -82,7 +82,7 @@ class ViewController: UIViewController {
         image.widthAnchor.constraintEqualToAnchor(view.widthAnchor, multiplier: 0.2).active = true
     }
     
-    func setImageXYConstraints() {
+    func setInitialImageXYConstraints() {
         rakeXConstraint = rake.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor, constant: -100)
         rakeXConstraint?.active = true
         rakeYConstraint = rake.centerYAnchor.constraintEqualToAnchor(view.centerYAnchor, constant: -100)
@@ -101,6 +101,42 @@ class ViewController: UIViewController {
         swordXConstraint = sword.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor, constant: 100)
         swordXConstraint?.active = true
         swordYConstraint = sword.centerYAnchor.constraintEqualToAnchor(view.centerYAnchor, constant: 100)
+        swordYConstraint?.active = true
+    }
+    
+    func randomizeXYCoordinates() -> (CGFloat, CGFloat) {
+        var randomX = CGFloat(arc4random_uniform(UInt32(view.bounds.size.width)))/2
+        var randomY = CGFloat(arc4random_uniform(UInt32(view.bounds.size.height)))/2
+        
+        if randomX % 2 == 0 {
+            randomX = -randomX
+        }
+        
+        if randomY % 2 == 0 {
+            randomY = -randomY
+        }
+        return (randomX, randomY)
+    }
+    
+    func setRandomImageXYConstraints() {
+        rakeXConstraint = rake.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor, constant: randomizeXYCoordinates().0)
+        rakeXConstraint?.active = true
+        rakeYConstraint = rake.centerYAnchor.constraintEqualToAnchor(view.centerYAnchor, constant: randomizeXYCoordinates().1)
+        rakeYConstraint?.active = true
+        
+        rockXConstraint = rock.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor, constant: randomizeXYCoordinates().0)
+        rockXConstraint?.active = true
+        rockYConstraint = rock.centerYAnchor.constraintEqualToAnchor(view.centerYAnchor, constant: randomizeXYCoordinates().1)
+        rockYConstraint?.active = true
+        
+        shrubXConstraint = shrub.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor, constant: randomizeXYCoordinates().0)
+        shrubXConstraint?.active = true
+        shrubYConstraint = shrub.centerYAnchor.constraintEqualToAnchor(view.centerYAnchor, constant: randomizeXYCoordinates().1)
+        shrubYConstraint?.active = true
+        
+        swordXConstraint = sword.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor, constant: randomizeXYCoordinates().0)
+        swordXConstraint?.active = true
+        swordYConstraint = sword.centerYAnchor.constraintEqualToAnchor(view.centerYAnchor, constant: randomizeXYCoordinates().1)
         swordYConstraint?.active = true
     }
     
@@ -152,7 +188,7 @@ class ViewController: UIViewController {
     
     func winAlert() {
         if winConditionsMet() {
-            let winAlert = UIAlertController(title: "Default Style", message: "You won!", preferredStyle: .Alert)
+            let winAlert = UIAlertController(title: "Feel the Zen", message: "You won!", preferredStyle: .Alert)
             let cancelAction = UIAlertAction(title: "Play Again", style: .Cancel) { (action) in
                 self.rakeXConstraint?.active = false
                 self.rakeYConstraint?.active = false
@@ -162,7 +198,7 @@ class ViewController: UIViewController {
                 self.shrubYConstraint?.active = false
                 self.swordXConstraint?.active = false
                 self.swordYConstraint?.active = false
-                self.setImageXYConstraints()
+                self.setRandomImageXYConstraints()
             }
             winAlert.addAction(cancelAction)
             
