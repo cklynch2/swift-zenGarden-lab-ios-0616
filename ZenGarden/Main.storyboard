@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="phh-8Y-LP1">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="z0R-rV-ABG">
+            <objects>
+                <viewController id="phh-8Y-LP1" customClass="ViewController" customModule="ZenGarden" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bvw-uD-PBv"/>
+                        <viewControllerLayoutGuide type="bottom" id="eym-Ff-uqC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nhi-AI-ba7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zgh-RZ-cm7">
+                                <rect key="frame" x="0.0" y="472" width="132" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OFl-ze-sY9">
+                                <rect key="frame" x="391" y="14" width="209" height="126"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P2E-ch-Lt9">
+                                <rect key="frame" x="0.0" y="0.0" width="170" height="132"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w4F-hi-sv6">
+                                <rect key="frame" x="469" y="472" width="131" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shrub" translatesAutoresizingMaskIntoConstraints="NO" id="5ZO-h7-aqz">
+                                <rect key="frame" x="20" y="299" width="197" height="128"/>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rake" translatesAutoresizingMaskIntoConstraints="NO" id="EsP-JE-RQG">
+                                <rect key="frame" x="57" y="44" width="133" height="192"/>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rock1" translatesAutoresizingMaskIntoConstraints="NO" id="dBE-Sc-KYr">
+                                <rect key="frame" x="335" y="108" width="156" height="128"/>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="swordinrock" translatesAutoresizingMaskIntoConstraints="NO" id="ekg-vo-7KK">
+                                <rect key="frame" x="322" y="271" width="158" height="183"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomLeftCorner" destination="zgh-RZ-cm7" id="CHP-jR-H2e"/>
+                        <outlet property="bottomRightCorner" destination="w4F-hi-sv6" id="USY-s6-9RN"/>
+                        <outlet property="rake" destination="EsP-JE-RQG" id="JzC-T9-KLZ"/>
+                        <outlet property="rock" destination="dBE-Sc-KYr" id="cpf-1f-FXr"/>
+                        <outlet property="shrub" destination="5ZO-h7-aqz" id="iWc-sX-14O"/>
+                        <outlet property="sword" destination="ekg-vo-7KK" id="bat-N9-e1a"/>
+                        <outlet property="topLeftCorner" destination="P2E-ch-Lt9" id="AsQ-5I-L7r"/>
+                        <outlet property="topRightCorner" destination="OFl-ze-sY9" id="Ov6-in-PG0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OG0-i4-DNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="364" y="366"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="rake" width="402" height="597"/>
+        <image name="rock1" width="297" height="234"/>
+        <image name="shrub" width="600" height="396"/>
+        <image name="swordinrock" width="498" height="600"/>
+    </resources>
+</document>
